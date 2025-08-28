@@ -32,17 +32,13 @@ function onClickCall(id, msg, num, title) {
         totalCoins.innerText = coin;
     });
 }
-async function copyTextToClipboard(text) {
-    try {
-        await navigator.clipboard.writeText(text);
-        console.log("Text copied to clipboard");
-    } catch (err) {
-        console.error("Failed to copy text: ", err);
-    }
-}
+
 function onClickCopy(id, num) {
     document.getElementById(id).addEventListener("click", function () {
-        copyTextToClipboard(num);
+        //navigator.clipboard.writeText(text);
+
+        let copy = document.getElementById("total-copy");
+        copy.innerText = parseInt(copy.innerText) + 1;
         alert("copying " + num);
     });
 }
@@ -58,6 +54,7 @@ for (const card of cards) {
     let num = card.children[2].children[0].innerText;
     let callId = card.children[3].children[1].id;
     onClickCall(callId, msg, num, title);
+
     let copyId = card.children[3].children[0].id;
     onClickCopy(copyId, num);
 }
