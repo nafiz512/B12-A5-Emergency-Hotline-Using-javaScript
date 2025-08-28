@@ -35,7 +35,7 @@ function onClickCall(id, msg, num, title) {
 
 function onClickCopy(id, num) {
     document.getElementById(id).addEventListener("click", function () {
-        //navigator.clipboard.writeText(text);
+        navigator.clipboard.writeText(text);
 
         let copy = document.getElementById("total-copy");
         copy.innerText = parseInt(copy.innerText) + 1;
