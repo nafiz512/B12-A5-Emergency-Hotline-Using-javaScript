@@ -1,7 +1,14 @@
 function onClickFavourite(id) {
     let contFav = document.getElementById("count-favourite");
-    document.getElementById(id).addEventListener("click", function () {
+    let fav = document.getElementById(id);
+    fav.addEventListener("click", function () {
         contFav.innerText = parseInt(contFav.innerText) + 1;
+        // const icon1 = document.getElementById(fav.children[0].id);
+        // const icon2 = document.getElementById(fav.children[1].id);
+        // console.log(icon1.classList);
+
+        // icon1.classList.toggle("hidden");
+        // icon2.classList.toggle("hidden");
     });
 }
 
@@ -13,15 +20,16 @@ function onClickCall(id, msg, num, title) {
             alert("Calling " + msg + " : " + num);
             coin -= 20;
             let div = document.createElement("div");
+            let curTime = new Date().toLocaleTimeString();
             let item = `<div
-                            class="flex justify-between bg-gray-100 rounded-lg p-2"
+                            class="flex gap-2 justify-between bg-gray-100 rounded-lg p-2 "
                         >
-                            <div>
+                            <div class="w-[215px]">
                                 <h3 class="font-bold">${title}</h3>
                                 <p>${num}</p>
                             </div>
-                            <div class="flex items-center">
-                                <h3>11:36:58 AM</h3>
+                            <div class="flex items-center w-[90px]">
+                                <h3>${curTime}</h3>
                             </div>
                         </div>`;
             div.innerHTML = item;
@@ -42,7 +50,9 @@ function onClickCopy(id, num) {
         alert("copying " + num);
     });
 }
-
+document.getElementById("btn-clear").addEventListener("click", function () {
+    document.getElementById("call-history").innerHTML = "";
+});
 let cards = document.getElementById("card-contact").children;
 
 for (const card of cards) {
