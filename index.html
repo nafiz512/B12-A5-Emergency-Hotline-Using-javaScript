@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Emergency Hotline</title>
+        <link rel="stylesheet" href="./style/style.css" />
         <!-- tailwind cdn -->
         <link
             href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -32,7 +33,7 @@
             }
         </style>
     </head>
-    <body class="bg-bg2">
+    <body class="bg-bg2 hind-madurai-regular">
         <header>
             <!-- nav bar  -->
             <nav
@@ -53,22 +54,22 @@
                 </div>
                 <div class="flex gap-6">
                     <div
-                        class="flex gap-3 justify-center items-center bg-[#41ff6b1a] py-2.5 px-8 rounded-3xl"
+                        class="flex gap-3 justify-center items-center bg-[#41ff6b1a] py-2 px-4 rounded-3xl"
                     >
-                        <p class="font-bold text-lg">0</p>
+                        <p id="count-favourite" class="font-bold text-lg">0</p>
                         <img class="h-7" src="./assets/heart.png" alt="" />
                     </div>
                     <div
-                        class="flex gap-3 justify-center items-center bg-[#41ff6b1a] py-2.5 px-8 rounded-3xl"
+                        class="flex gap-3 justify-center items-center bg-[#41ff6b1a] py-2 px-4 rounded-3xl"
                     >
-                        <p class="font-bold text-lg">0</p>
+                        <p id="coins" class="font-bold text-lg">100</p>
                         <img class="h-7" src="./assets/coin.png" alt="" />
                     </div>
                     <div
-                        class="flex gap-3 text-white justify-center items-center bg-green2 py-2.5 px-8 rounded-3xl"
+                        class="flex gap-3 text-white justify-center items-center bg-green2 py-2 px-4 rounded-3xl"
                     >
-                        <p class="font-bold text-lg">0</p>
-                        <h3 class="text-lg font-bold">Copy</h3>
+                        <p class="font-bold text-[16px]">0</p>
+                        <h3 class="text-[16px] font-bold">Copy</h3>
                     </div>
                 </div>
             </nav>
@@ -89,19 +90,24 @@
                 </div>
             </section>
         </header>
-        <main>
+        <main class="mt-12">
             <!-- section information  -->
-            <section class="flex max-w-[1800px] mx-auto mt-12 gap-6">
+            <section class="flex max-w-[1800px] mx-auto gap-6">
                 <!-- Emergency contract  -->
-                <div class="grid grid-cols-3 gap-4 flex-3/4">
+                <div id="card-contact" class="grid grid-cols-3 gap-4 flex-3/4">
                     <div
-                        class="bg-white p-8 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                        id="card-1"
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
                     >
-                        <div class="flex justify-between">
-                            <div class="bg-pink1 p-3.5 rounded-2xl">
-                                <img src="./assets/emergency.png" alt="" />
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
                             </div>
-                            <div>
+                            <div id="favourite-1">
                                 <i class="text-2xl fa-regular fa-heart"></i>
                                 <i
                                     class="text-2xl fa-solid fa-heart text-red-700"
@@ -109,7 +115,7 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold">
+                            <h3 class="text-xl font-bold">
                                 National Emergency Number
                             </h3>
                             <p class="text-lg mt-1 text-gray-500">
@@ -117,34 +123,42 @@
                             </p>
                         </div>
                         <div class="flex gap-1 flex-col my-6">
-                            <h3 class="font-bold text-3xl">999</h3>
+                            <h3 class="font-bold text-2xl">999</h3>
                             <span
-                                class="bg-gray-200 py-1 text-lg px-4 w-max rounded-2xl text-gray-500"
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
                                 >All</span
                             >
                         </div>
                         <!-- btn  -->
                         <div class="flex gap-2">
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 text-gray-500"
+                                id="copy-1"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
                             >
                                 <i class="fa-regular fa-copy"></i>
                                 Copy
                             </button>
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 bg-green2 text-white"
+                                id="call-1"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
                             >
                                 <i class="fa-solid fa-phone"></i>
                                 Call
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white p-8">
-                        <div class="flex justify-between">
-                            <div class="bg-pink1 p-3.5 rounded-2xl">
-                                <img src="./assets/emergency.png" alt="" />
+                    <div
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                    >
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
                             </div>
-                            <div>
+                            <div id="favourite-2">
                                 <i class="text-2xl fa-regular fa-heart"></i>
                                 <i
                                     class="text-2xl fa-solid fa-heart text-red-700"
@@ -152,42 +166,50 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold">
-                                National Emergency Number
+                            <h3 class="text-xl font-bold">
+                                National Emergency Number1
                             </h3>
                             <p class="text-lg mt-1 text-gray-500">
                                 National Emergency
                             </p>
                         </div>
                         <div class="flex gap-1 flex-col my-6">
-                            <h3 class="font-bold text-3xl">999</h3>
+                            <h3 class="font-bold text-2xl">999</h3>
                             <span
-                                class="bg-gray-200 py-1 text-lg px-4 w-max rounded-2xl text-gray-500"
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
                                 >All</span
                             >
                         </div>
                         <!-- btn  -->
                         <div class="flex gap-2">
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 text-gray-500"
+                                id="copy-2"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
                             >
                                 <i class="fa-regular fa-copy"></i>
                                 Copy
                             </button>
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 bg-green2 text-white"
+                                id="call-2"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
                             >
                                 <i class="fa-solid fa-phone"></i>
                                 Call
                             </button>
                         </div>
                     </div>
-                    <div class="bg-white p-8">
-                        <div class="flex justify-between">
-                            <div class="bg-pink1 p-3.5 rounded-2xl">
-                                <img src="./assets/emergency.png" alt="" />
+                    <div
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                    >
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
                             </div>
-                            <div>
+                            <div id="favourite-3">
                                 <i class="text-2xl fa-regular fa-heart"></i>
                                 <i
                                     class="text-2xl fa-solid fa-heart text-red-700"
@@ -195,30 +217,188 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <h3 class="text-2xl font-bold">
-                                National Emergency Number
+                            <h3 class="text-xl font-bold">
+                                National Emergency Number1
                             </h3>
                             <p class="text-lg mt-1 text-gray-500">
                                 National Emergency
                             </p>
                         </div>
                         <div class="flex gap-1 flex-col my-6">
-                            <h3 class="font-bold text-3xl">999</h3>
+                            <h3 class="font-bold text-2xl">999</h3>
                             <span
-                                class="bg-gray-200 py-1 text-lg px-4 w-max rounded-2xl text-gray-500"
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
                                 >All</span
                             >
                         </div>
                         <!-- btn  -->
                         <div class="flex gap-2">
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 text-gray-500"
+                                id="copy-3"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
                             >
                                 <i class="fa-regular fa-copy"></i>
                                 Copy
                             </button>
                             <button
-                                class="rounded-2xl border-1 py-3 border-gray-300 text-lg w-1/2 bg-green2 text-white"
+                                id="call-3"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
+                            >
+                                <i class="fa-solid fa-phone"></i>
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                    >
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div id="favourite-4">
+                                <i class="text-2xl fa-regular fa-heart"></i>
+                                <i
+                                    class="text-2xl fa-solid fa-heart text-red-700"
+                                ></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-bold">
+                                National Emergency Number1
+                            </h3>
+                            <p class="text-lg mt-1 text-gray-500">
+                                National Emergency
+                            </p>
+                        </div>
+                        <div class="flex gap-1 flex-col my-6">
+                            <h3 class="font-bold text-2xl">999</h3>
+                            <span
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
+                                >All</span
+                            >
+                        </div>
+                        <!-- btn  -->
+                        <div class="flex gap-2">
+                            <button
+                                id="copy-4"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                                Copy
+                            </button>
+                            <button
+                                id="call-4"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
+                            >
+                                <i class="fa-solid fa-phone"></i>
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                    >
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div id="favourite-5">
+                                <i class="text-2xl fa-regular fa-heart"></i>
+                                <i
+                                    class="text-2xl fa-solid fa-heart text-red-700"
+                                ></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-bold">
+                                National Emergency Number1
+                            </h3>
+                            <p class="text-lg mt-1 text-gray-500">
+                                National Emergency
+                            </p>
+                        </div>
+                        <div
+                            id="hotline-container"
+                            class="flex gap-1 flex-col my-6"
+                        >
+                            <h3 class="font-bold text-2xl">999</h3>
+                            <span
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
+                                >All</span
+                            >
+                        </div>
+                        <!-- btn  -->
+                        <div class="flex gap-2">
+                            <button
+                                id="copy-5"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                                Copy
+                            </button>
+                            <button
+                                id="call-5"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
+                            >
+                                <i class="fa-solid fa-phone"></i>
+                                Call
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-4 rounded-2xl shadow-[0px_2px_3px_0px_rgba(0,0,0,0.15)]"
+                    >
+                        <div class="flex justify-between items-center">
+                            <div class="bg-pink1 p-3 rounded-2xl">
+                                <img
+                                    class="h-7"
+                                    src="./assets/emergency.png"
+                                    alt=""
+                                />
+                            </div>
+                            <div id="favourite-6">
+                                <i class="text-2xl fa-regular fa-heart"></i>
+                                <i
+                                    class="text-2xl fa-solid fa-heart text-red-700"
+                                ></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-bold">
+                                National Emergency Number1
+                            </h3>
+                            <p class="text-lg mt-1 text-gray-500">
+                                National Emergency
+                            </p>
+                        </div>
+                        <div class="flex gap-1 flex-col my-6">
+                            <h3 class="font-bold text-2xl">999</h3>
+                            <span
+                                class="bg-gray-200 py-1 px-4 w-max rounded-xl text-gray-500"
+                                >All</span
+                            >
+                        </div>
+                        <!-- btn  -->
+                        <div class="flex gap-2">
+                            <button
+                                id="copy-6"
+                                class="rounded-xl border-1 border-gray-300 w-1/2 text-gray-500"
+                            >
+                                <i class="fa-regular fa-copy"></i>
+                                Copy
+                            </button>
+                            <button
+                                id="call-6"
+                                class="rounded-xl border-1 py-1 border-gray-300 w-1/2 bg-green2 text-white"
                             >
                                 <i class="fa-solid fa-phone"></i>
                                 Call
@@ -230,9 +410,7 @@
                 <!-- call history  -->
                 <div class="felx-1/4 bg-white rounded-xl p-4">
                     <div class="flex justify-betweenss items-center gap-24">
-                        <div
-                            class="flex justify-center gap-1 items-center text-lg"
-                        >
+                        <div class="flex justify-center gap-1 items-center">
                             <i class="fa-regular fa-clock"></i>
                             <h3 class="">Call History</h3>
                         </div>
