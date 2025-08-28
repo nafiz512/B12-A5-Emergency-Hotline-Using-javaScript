@@ -1,31 +1,16 @@
-let favouriteIDs = [
-    "favourite-1",
-    "favourite-2",
-    "favourite-3",
-    "favourite-4",
-    "favourite-5",
-    "favourite-6",
-];
-let contFav = document.getElementById("count-favourite");
-for (let id of favouriteIDs) {
+function onClickFavourite(id) {
+    let contFav = document.getElementById("count-favourite");
     document.getElementById(id).addEventListener("click", function () {
         contFav.innerText = parseInt(contFav.innerText) + 1;
     });
 }
 
-let copyIDs = ["copy-1", "copy-2", "copy-3", "copy-4", "copy-5", "copy-6"];
-
-for (let id of copyIDs) {
-}
-
-let callIDs = ["call-1", "call-2", "call-3", "call-4", "call-5", "call-6"];
-
-let totalCoins = document.getElementById("coins");
-for (let id of callIDs) {
+function onClickCall(id, msg, num) {
+    let totalCoins = document.getElementById("coins");
     document.getElementById(id).addEventListener("click", function () {
         let coin = parseInt(totalCoins.innerText);
         if (coin >= 20) {
-            alert("Calling");
+            alert("Calling " + msg + " : " + num);
             coin -= 20;
         } else {
             alert("you need at least 20 coins");
@@ -33,4 +18,31 @@ for (let id of callIDs) {
         totalCoins.innerText = coin;
     });
 }
-// console.log(childs[0].children[0].children[1].id);
+async function copyTextToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+        console.log("Text copied to clipboard");
+    } catch (err) {
+        console.error("Failed to copy text: ", err);
+    }
+}
+function onClickCopy(id, num) {
+    document.getElementById(id).addEventListener("click", function () {
+        copyTextToClipboard(num);
+        alert("copying " + num);
+    });
+}
+
+let cards = document.getElementById("card-contact").children;
+
+for (const card of cards) {
+    let favouriteId = card.children[0].children[1].id;
+    onClickFavourite(favouriteId);
+
+    let msg = card.children[1].children[1].innerText;
+    let num = card.children[2].children[0].innerText;
+    let callId = card.children[3].children[1].id;
+    onClickCall(callId, msg, num);
+    let copyId = card.children[3].children[0].id;
+    onClickCopy(copyId, num);
+}
