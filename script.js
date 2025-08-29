@@ -24,12 +24,12 @@ function onClickCall(id, msg, num, title) {
             let item = `<div
                             class="flex gap-2 justify-between bg-gray-100 rounded-lg p-2 "
                         >
-                            <div class="w-[215px]">
+                            <div class="">
                                 <h3 class="font-bold">${title}</h3>
-                                <p>${num}</p>
+                                <p class="text-gray-500">${num}</p>
                             </div>
-                            <div class="flex items-center w-[90px]">
-                                <h3>${curTime}</h3>
+                            <div class="flex items-center ">
+                                <h3 class="text-gray-500">${curTime}</h3>
                             </div>
                         </div>`;
             div.innerHTML = item;
